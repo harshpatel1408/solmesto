@@ -5,11 +5,14 @@
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+	<script src="assets/js/main.js" defer></script>
 	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
 	<script id="tailwind-config">
 	tailwind.config = {
+
 		darkMode: "class",
 		theme: {
 			extend: {
@@ -71,14 +74,11 @@
 			transform: translateX(-50%) translateY(-5px);
 		}
 	}
-
-	.animate-bounce-subtle {
-		animation: bounce-subtle 2s infinite;
-	}
 	</style>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+	<!-- Top Navigation Bar -->
 	<!-- Top Navigation Bar -->
 	<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,12 +99,28 @@
 					<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="projects.html">Projects</a>
 					<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="contact.html">Contact</a>
 				</nav>
+				<!-- Hamburger Button -->
+				<button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none">
+					<span class="hamburger-line w-6 h-0.5 bg-slate-800 dark:bg-white transition-all duration-300"></span>
+					<span class="hamburger-line w-6 h-0.5 bg-slate-800 dark:bg-white transition-all duration-300"></span>
+					<span class="hamburger-line w-6 h-0.5 bg-slate-800 dark:bg-white transition-all duration-300"></span>
+				</button>
 				<!-- <div class="flex items-center gap-4">
 					<button class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"> Get a Quote </button>
 					<button class="md:hidden text-slate-600 dark:text-slate-300">
 						<span class="material-symbols-outlined">menu</span>
 					</button>
 				</div> -->
+			</div>
+		</div>
+		<!-- Mobile Menu -->
+		<div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 shadow-lg">
+			<div class="px-6 py-6 space-y-6 text-center">
+				<a class="block text-lg font-medium hover:text-primary transition mobile-link" href="index.html">Home</a>
+				<a class="block text-lg font-medium hover:text-primary transition mobile-link" href="about.html">About</a>
+				<a class="block text-lg font-medium hover:text-primary transition mobile-link" href="services.html">Service</a>
+				<a class="block text-lg font-medium hover:text-primary transition mobile-link" href="projects.html">Projects</a>
+				<a class="block text-lg font-medium hover:text-primary transition mobile-link" href="contact.html">Contact</a>
 			</div>
 		</div>
 	</header>
